@@ -3,6 +3,32 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <img src="~/Images/logo.png" />
+    <h1 class="display-4">What do you want to book today?</h1>
+    <div class="card-deck">
+        <a class="card" asp-area="" asp-controller="Home" asp-action="Restaurant">
+            <div>
+                <img src="~/Images/restaurants.jpg" class="card-img-top" alt="Restaurant">
+                <div class="card-body">
+                    <h5 class="card-title">Restaurant</h5>
+                </div>
+            </div>
+        </a>
+        <a class="card" asp-area="" asp-controller="Home" asp-action="Barbershop">
+            <div>
+                <img src="~/Images/barbershop.jpeg" class="card-img-top" alt="Barbershop">
+                <div class="card-body">
+                    <h5 class="card-title">Barbershop</h5>
+                </div>
+            </div>
+        </a>
+        <a class="card" asp-area="" asp-controller="Home" asp-action="Cinema">
+            <div>
+                <img src="~/Images/cinema.jpg" class="card-img-top" alt="Cinema">
+                <div class="card-body">
+                    <h5 class="card-title">Cinema</h5>
+                </div>
+            </div>
+        </a>
+    </div>
 </div>

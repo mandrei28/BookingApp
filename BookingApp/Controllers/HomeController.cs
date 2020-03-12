@@ -27,6 +27,31 @@ namespace BookingApp.Controllers
         {
             return View();
         }
+        public IActionResult Contact()
+        {
+            return View();
+        }
+        public IActionResult Login()
+        {
+            return View();
+        }
+        public IActionResult Restaurant()
+        {
+            return View();
+        }
+        public IActionResult Cinema()
+        {
+            return View();
+        }
+        public IActionResult Barbershop()
+        {
+            return View();
+        }
+        public IActionResult Register()
+        {
+            return View();
+        }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

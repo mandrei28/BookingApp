@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewData["Title"] = "Barbershop";
+    List<BarbershopModel> barbershops = new List<BarbershopModel>();
+    BarbershopModel barbershopModel1 = new BarbershopModel("~/Images/barbershop.jpeg", "Alexandru Chirca1");
+    barbershops.Add(barbershopModel1);
+    BarbershopModel barbershopModel2 = new BarbershopModel("~/Images/barbershop.jpeg", "Alexandru Chirca2");
+    barbershops.Add(barbershopModel2);
+    BarbershopModel barbershopModel3 = new BarbershopModel("~/Images/barbershop.jpeg", "Alexandru Chirca3");
+    barbershops.Add(barbershopModel3);
+    BarbershopModel barbershopModel4 = new BarbershopModel("~/Images/barbershop.jpeg", "Alexandru Chirca4");
+    barbershops.Add(barbershopModel4);
+    BarbershopModel barbershopModel5 = new BarbershopModel("~/Images/barbershop.jpeg", "Alexandru Chirca5");
+    barbershops.Add(barbershopModel5);
+    BarbershopModel barbershopModel6 = new BarbershopModel("~/Images/barbershop.jpeg", "Alexandru Chirca6");
+    barbershops.Add(barbershopModel6);
+    BarbershopModel barbershopModel7 = new BarbershopModel("~/Images/barbershop.jpeg", "Alexandru Chirca7");
+    barbershops.Add(barbershopModel7);
+    BarbershopModel barbershopModel8 = new BarbershopModel("~/Images/barbershop.jpeg", "Alexandru Chirca8");
+    barbershops.Add(barbershopModel8);
+
+
+}
+<div class="text-center">
+    <h1 class="display-4">Barbershops</h1>
+    <div class="card-deck">
+        @foreach (var barbershop in barbershops)
+        {
+            <a class="card split" asp-area="" asp-controller="Home" asp-action="Restaurant">
+                <div>
+                    <img src="@Url.Content(barbershop.ImgPath)" class="card-img-top" alt="@barbershop.Name">
+                    <div class="card-body">
+                        <h5 class="card-title">@barbershop.Name</h5>
+                    </div>
+                </div>
+            </a>
+        }
+    </div>
+</div>

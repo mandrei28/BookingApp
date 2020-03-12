@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewData["Title"] = "Restaurant";
+    List<RestaurantModel> restaurants = new List<RestaurantModel>();
+    RestaurantModel restaurantModel1 = new RestaurantModel("~/Images/mcdonalds.png", "McDonalds1");
+    restaurants.Add(restaurantModel1);
+    RestaurantModel restaurantModel2 = new RestaurantModel("~/Images/mcdonalds.png", "McDonalds2");
+    restaurants.Add(restaurantModel2);
+    RestaurantModel restaurantModel3 = new RestaurantModel("~/Images/mcdonalds.png", "McDonalds3");
+    restaurants.Add(restaurantModel3);
+    RestaurantModel restaurantModel4 = new RestaurantModel("~/Images/mcdonalds.png", "McDonalds4");
+    restaurants.Add(restaurantModel4);
+    RestaurantModel restaurantModel5 = new RestaurantModel("~/Images/mcdonalds.png", "McDonalds5");
+    restaurants.Add(restaurantModel5);
+    RestaurantModel restaurantModel6 = new RestaurantModel("~/Images/mcdonalds.png", "McDonalds6");
+    restaurants.Add(restaurantModel6);
+    RestaurantModel restaurantModel7 = new RestaurantModel("~/Images/mcdonalds.png", "McDonalds7");
+    restaurants.Add(restaurantModel7);
+    RestaurantModel restaurantModel8 = new RestaurantModel("~/Images/mcdonalds.png", "McDonalds8");
+    restaurants.Add(restaurantModel8);
+
+
+}
+<div class="text-center">
+    <h1 class="display-4">Restaurants</h1>
+    <div class="card-deck">
+        @foreach (var restaurant in restaurants)
+        {
+            <a class="card split" asp-area="" asp-controller="Home" asp-action="Restaurant">
+                <div>
+                    <img src="@Url.Content(restaurant.ImgPath)" class="card-img-top" alt="@restaurant.Name">
+                    <div class="card-body">
+                        <h5 class="card-title">@restaurant.Name</h5>
+                    </div>
+                </div>
+            </a>
+        }
+    </div>
+</div>
