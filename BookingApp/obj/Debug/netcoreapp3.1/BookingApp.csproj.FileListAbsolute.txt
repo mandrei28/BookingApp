@@ -141,10 +141,11 @@ E:\SiteWAD\BookingApp\bin\Debug\netcoreapp3.1\ru\Microsoft.CodeAnalysis.Workspac
 E:\SiteWAD\BookingApp\bin\Debug\netcoreapp3.1\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 E:\SiteWAD\BookingApp\bin\Debug\netcoreapp3.1\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 E:\SiteWAD\BookingApp\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
-E:\SiteWAD\BookingApp\obj\Debug\netcoreapp3.1\BookingApp.MvcApplicationPartsAssemblyInfo.cache
 E:\SiteWAD\BookingApp\obj\Debug\netcoreapp3.1\Razor\Views\Home\Restaurant.cshtml.g.cs
 E:\SiteWAD\BookingApp\obj\Debug\netcoreapp3.1\Razor\Views\Home\Barbershop.cshtml.g.cs
 E:\SiteWAD\BookingApp\obj\Debug\netcoreapp3.1\Razor\Views\Home\Cinema.cshtml.g.cs
 E:\SiteWAD\BookingApp\obj\Debug\netcoreapp3.1\Razor\Views\Home\Login.cshtml.g.cs
 E:\SiteWAD\BookingApp\obj\Debug\netcoreapp3.1\Razor\Views\Home\Register.cshtml.g.cs
 E:\SiteWAD\BookingApp\obj\Debug\netcoreapp3.1\Razor\Views\Home\Contact.cshtml.g.cs
+E:\SiteWAD\BookingApp\obj\Debug\netcoreapp3.1\Razor\Views\Home\RestaurantReservation.cshtml.g.cs
+E:\SiteWAD\BookingApp\obj\Debug\netcoreapp3.1\BookingApp.MvcApplicationPartsAssemblyInfo.cache

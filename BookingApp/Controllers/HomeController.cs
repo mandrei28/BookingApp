@@ -51,6 +51,10 @@ namespace BookingApp.Controllers
         {
             return View();
         }
+        public IActionResult RestaurantReservation()
+        {
+            return View();
+        }
 
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
