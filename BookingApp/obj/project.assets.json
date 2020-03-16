@@ -6026,21 +6026,17 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\marcu\\.nuget\\packages\\": {},
-    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
+    "C:\\Users\\marcu\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\SiteWAD\\BookingApp\\BookingApp.csproj",
+      "projectUniqueName": "E:\\BookingApp\\BookingApp\\BookingApp.csproj",
       "projectName": "BookingApp",
-      "projectPath": "E:\\SiteWAD\\BookingApp\\BookingApp.csproj",
+      "projectPath": "E:\\BookingApp\\BookingApp\\BookingApp.csproj",
       "packagesPath": "C:\\Users\\marcu\\.nuget\\packages\\",
-      "outputPath": "E:\\SiteWAD\\BookingApp\\obj\\",
+      "outputPath": "E:\\BookingApp\\BookingApp\\obj\\",
       "projectStyle": "PackageReference",
-      "fallbackFolders": [
-        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
-      ],
       "configFilePaths": [
         "C:\\Users\\marcu\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
