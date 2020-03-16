@@ -26,7 +26,7 @@
     <div class="card-deck">
         @foreach (var cinema in cinemas)
         {
-            <a class="card split" asp-area="" asp-controller="Home" asp-action="Restaurant">
+            <a class="card split" asp-area="" asp-controller="Home" asp-action="RestaurantReservation">
                 <div>
                     <img src="@Url.Content(cinema.ImgPath)" class="card-img-top" alt="@cinema.Name">
                     <div class="card-body">

@@ -1,8 +1,37 @@
-﻿
+﻿@model BookingApp.Models.Reservation
 @{
     ViewData["Title"] = "RestaurantReservation";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Restaurant Name</h1>
-</div>
+    <div class="container w-50 text-center">
+        <h1 class="display-4">Restaurant Name</h1>
+        <div class="form-group" style=" margin-top: 10rem;">
+            <label asp-for="Date" class="control-label"></label>
+            <input asp-for="Date" class="form-control" />
+            <span asp-validation-for="Date" class="text-danger"></span>
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="inputGroupSelect01">People</label>
+            </div>
+            <select class="custom-select" id="inputGroupSelect01">
+                <option selected>Choose...</option>
+                <option value="1">1</option>
+                <option value="2">4</option>
+                <option value="3">16</option>
+            </select>
+        </div>
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <label class="input-group-text" for="inputGroupSelect02">Hour</label>
+            </div>
+            <select class="custom-select" id="inputGroupSelect02">
+                <option selected>Choose...</option>
+                <option value="1">11:00</option>
+                <option value="2">14:00</option>
+                <option value="3">16:00</option>
+            </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary mt-5 col-md-12">Book</button>
+    </div>

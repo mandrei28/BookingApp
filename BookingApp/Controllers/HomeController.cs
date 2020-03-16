@@ -31,10 +31,6 @@ namespace BookingApp.Controllers
         {
             return View();
         }
-        public IActionResult Login()
-        {
-            return View();
-        }
         public IActionResult Restaurant()
         {
             return View();
@@ -47,13 +43,9 @@ namespace BookingApp.Controllers
         {
             return View();
         }
-        public IActionResult Register()
-        {
-            return View();
-        }
         public IActionResult RestaurantReservation()
         {
-            return View();
+            return View(new Reservation());
         }
 
 
