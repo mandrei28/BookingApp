@@ -45,7 +45,7 @@ namespace BookingApp.Controllers
         }
         public IActionResult RestaurantReservation()
         {
-            return View(new Reservation());
+            return View(new ReservationModel());
         }
 
 

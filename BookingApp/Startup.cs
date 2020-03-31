@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using BookingApp.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -9,6 +10,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Westwind.AspNetCore.LiveReload;
+using Microsoft.EntityFrameworkCore;
+using BookingApp.DataAccess;
 
 namespace BookingApp
 {
@@ -25,7 +28,23 @@ namespace BookingApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddLiveReload();
+
             services.AddControllersWithViews();
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAllHeaders",
+                      builder =>
+                      {
+                          builder.AllowAnyOrigin()
+                                 .AllowAnyHeader()
+                                 .AllowAnyMethod();
+                      });
+            });
+
+            services.AddDbContext<DataContext>(options =>
+            options.UseSqlServer(Configuration.GetConnectionString("connectionString")));
+
+            services.AddScoped<IRestaurantDataAccess, RestaurantDataAccess>();
 
         }
 
@@ -48,6 +67,10 @@ namespace BookingApp
             app.UseStaticFiles();
 
             app.UseRouting();
+
+            app.UseCors(
+                "AllowAllHeaders"
+            );
 
             app.UseAuthorization();
 
