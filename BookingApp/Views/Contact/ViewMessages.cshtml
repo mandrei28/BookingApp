@@ -1,0 +1,27 @@
+﻿@model IEnumerable<Contact>
+@{
+    ViewData["Title"] = "ViewMessages";
+}
+
+<div class="container w-100 text-center">
+    <h1 class="display-4">View messages</h1>
+    <table style="margin-top: 5rem;" class="table">
+        <thead>
+            <tr>
+                <th scope="col">Guid</th>
+                <th scope="col">Email</th>
+                <th scope="col">Message</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var contact in Model)
+            {
+                <tr>
+                    <th scope="row">@contact.Id</th>
+                    <td>@contact.Email</td>
+                    <td>@contact.Message</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

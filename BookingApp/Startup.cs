@@ -2,7 +2,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using BookingApp.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -12,6 +11,8 @@ using Microsoft.Extensions.Hosting;
 using Westwind.AspNetCore.LiveReload;
 using Microsoft.EntityFrameworkCore;
 using BookingApp.DataAccess;
+using BookingApp.ApplicationLogic.Abstractions;
+using BookingApp.ApplicationLogic.Services;
 
 namespace BookingApp
 {
@@ -27,7 +28,7 @@ namespace BookingApp
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddLiveReload();
+            //services.AddLiveReload();
 
             services.AddControllersWithViews();
             services.AddCors(options =>
@@ -41,17 +42,24 @@ namespace BookingApp
                       });
             });
 
-            services.AddDbContext<DataContext>(options =>
+            services.AddDbContext<BookingAppDbContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("connectionString")));
-
-            services.AddScoped<IRestaurantDataAccess, RestaurantDataAccess>();
+            services.AddScoped<IAdministratorRepository, AdministratorRepository>();
+            services.AddScoped<IBarbershopRepository, BarbershopRepository>();
+            services.AddScoped<CinemaService>();
+            services.AddScoped<RestaurantService>();
+            services.AddScoped<BarbershopService>();
+            services.AddScoped<ContactService>();
+            services.AddScoped<BarbershopReservationService>();
+            services.AddScoped<IBarbershopReservationRepository, BarbershopReservationRepository>();
+            services.AddScoped<IContactRepository, ContactRepository>();
 
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            app.UseLiveReload();
+            //app.UseLiveReload();
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

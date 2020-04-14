@@ -1,31 +1,14 @@
 ﻿
 @{
     ViewData["Title"] = "Cinema";
-    List<CinemaModel> cinemas = new List<CinemaModel>();
-    CinemaModel cinemaModel1 = new CinemaModel("~/Images/cinema.jpg", "Inspire1");
-    cinemas.Add(cinemaModel1);
-    CinemaModel cinemaModel2 = new CinemaModel("~/Images/cinema.jpg", "Inspire2");
-    cinemas.Add(cinemaModel2);
-    CinemaModel cinemaModel3 = new CinemaModel("~/Images/cinema.jpg", "Inspire3");
-    cinemas.Add(cinemaModel3);
-    CinemaModel cinemaModel4 = new CinemaModel("~/Images/cinema.jpg", "Inspire4");
-    cinemas.Add(cinemaModel4);
-    CinemaModel cinemaModel5 = new CinemaModel("~/Images/cinema.jpg", "Inspire5");
-    cinemas.Add(cinemaModel5);
-    CinemaModel cinemaModel6 = new CinemaModel("~/Images/cinema.jpg", "Inspire6");
-    cinemas.Add(cinemaModel6);
-    CinemaModel cinemaModel7 = new CinemaModel("~/Images/cinema.jpg", "Inspire7");
-    cinemas.Add(cinemaModel7);
-    CinemaModel cinemaModel8 = new CinemaModel("~/Images/cinema.jpg", "Inspire8");
-    cinemas.Add(cinemaModel8);
 
 
 }
 <div class="text-center">
     <h1 class="display-4">Cinemas</h1>
     <div class="card-deck">
-        @foreach (var cinema in cinemas)
-        {
+        @*@foreach (var cinema in cinemas)
+            {
             <a class="card split" asp-area="" asp-controller="Home" asp-action="RestaurantReservation">
                 <div>
                     <img src="@Url.Content(cinema.ImgPath)" class="card-img-top" alt="@cinema.Name">
@@ -34,6 +17,6 @@
                     </div>
                 </div>
             </a>
-        }
+            }*@
     </div>
 </div>

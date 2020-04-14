@@ -1,17 +1,14 @@
 ﻿
 @{
     ViewData["Title"] = "Restaurant";
-    List<RestaurantModel> restaurants = new List<RestaurantModel>();
-    RestaurantModel restaurantModel1 = new RestaurantModel() { Name = "McDonalds1", ImgPath = "~/Images/mcdonalds.png" };
-    restaurants.Add(restaurantModel1);
 
 
 }
 <div class="text-center">
     <h1 class="display-4">Restaurants</h1>
     <div class="card-deck">
-        @foreach (var restaurant in restaurants)
-        {
+        @*@foreach (var restaurant in restaurants)
+            {
             <a class="card split" asp-area="" asp-controller="Home" asp-action="RestaurantReservation">
                 <div>
                     <img src="@Url.Content(restaurant.ImgPath)" class="card-img-top" alt="@restaurant.Name">
@@ -20,6 +17,6 @@
                     </div>
                 </div>
             </a>
-        }
+            }*@
     </div>
 </div>

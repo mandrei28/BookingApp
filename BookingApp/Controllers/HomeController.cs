@@ -5,7 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using BookingApp.Models;
+using BookingApp.ApplicationLogic.DataModel;
 
 namespace BookingApp.Controllers
 {
@@ -45,14 +45,7 @@ namespace BookingApp.Controllers
         }
         public IActionResult RestaurantReservation()
         {
-            return View(new ReservationModel());
-        }
-
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+            return View(new RestaurantReservation());
         }
     }
 }
