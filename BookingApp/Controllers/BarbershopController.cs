@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using BookingApp.ApplicationLogic.Abstractions;
 using BookingApp.ApplicationLogic.DataModel;
 using BookingApp.ApplicationLogic.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BookingApp.Controllers
@@ -23,12 +24,13 @@ namespace BookingApp.Controllers
             var barbershops = barbershopService.GetAllBarbershops();
             return View(barbershops);
         }
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public IActionResult AddBarbershop()
         {
             return View();
         }
-
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public IActionResult AddBarbershop([FromForm]Barbershop model)
         {
@@ -39,6 +41,7 @@ namespace BookingApp.Controllers
             this.barbershopService.AddBarbershop(model);
             return Redirect(Url.Action("Index", "Barbershop"));
         }
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public IActionResult DeleteBarbershop()
         {
@@ -46,7 +49,7 @@ namespace BookingApp.Controllers
             ViewData["BarbershopIds"] = barbershopsIds;
             return View();
         }
-
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public IActionResult DeleteBarbershop([FromForm]Barbershop model)
         {
@@ -57,6 +60,7 @@ namespace BookingApp.Controllers
             this.barbershopService.DeleteBarbershop(model.Id);
             return Redirect(Url.Action("Index", "Barbershop"));
         }
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public IActionResult UpdateBarbershop()
         {
@@ -64,7 +68,7 @@ namespace BookingApp.Controllers
             ViewData["BarbershopIds"] = barbershopsIds;
             return View();
         }
-
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public IActionResult UpdateBarbershop([FromForm]Barbershop model)
         {

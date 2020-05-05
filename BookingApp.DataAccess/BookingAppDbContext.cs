@@ -1,4 +1,6 @@
 ﻿using BookingApp.ApplicationLogic.DataModel;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -6,7 +8,7 @@ using System.Text;
 
 namespace BookingApp.DataAccess
 {
-    public class BookingAppDbContext : DbContext
+    public class BookingAppDbContext : IdentityDbContext<IdentityUser>
     {
         public BookingAppDbContext(DbContextOptions<BookingAppDbContext> options) : base(options)
         {

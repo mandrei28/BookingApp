@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using BookingApp.ApplicationLogic.DataModel;
 using BookingApp.ApplicationLogic.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BookingApp.Controllers
@@ -29,12 +30,14 @@ namespace BookingApp.Controllers
             this.contactService.AddMessage(model);
             return Redirect(Url.Action("Index", "Home"));
         }
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public IActionResult ViewMessages()
         {
             var contactMessages = contactService.GetAllMessages();
             return View(contactMessages);
         }
+        [Authorize(Roles = "Admin")]
         [HttpGet]
         public IActionResult DeleteMessage()
         {
@@ -42,6 +45,7 @@ namespace BookingApp.Controllers
             ViewData["MessagesIds"] = messageIds;
             return View();
         }
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         public IActionResult DeleteMessage([FromForm]Contact model)
         {

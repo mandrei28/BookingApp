@@ -4,8 +4,11 @@
 }
 <div class="container w-50 text-center">
     <h1 class="display-4">Contact</h1>
-    <a href='@Url.Action("ViewMessages", "Contact")'>ViewMessages</a>
-    <a href='@Url.Action("DeleteMessage", "Contact")'>DeleteMessage</a>
+    @if (this.User.IsInRole("Admin"))
+    {
+        <a href='@Url.Action("ViewMessages", "Contact")'>ViewMessages</a>
+        <a href='@Url.Action("DeleteMessage", "Contact")'>DeleteMessage</a>
+    }
     <form style="margin-top: 8rem" asp-action="AddMessage" method="post">
         <div class="form-group">
             <label for="emalAdress">Your email address</label>

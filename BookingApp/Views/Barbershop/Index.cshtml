@@ -4,11 +4,14 @@
 }
 <div class="text-center">
     <h1 class="display-4">Barbershops</h1>
-    <div style="padding-top: 25px">
-        <a href='@Url.Action("AddBarbershop", "Barbershop")'>AddBarbershop</a>
-        <a href='@Url.Action("DeleteBarbershop", "Barbershop")'>DeleteBarbershop</a>
-        <a href='@Url.Action("UpdateBarbershop", "Barbershop")'>UpdateBarbershop</a>
-    </div>
+    @if (this.User.IsInRole("Admin"))
+    {
+        <div style="padding-top: 25px">
+            <a href='@Url.Action("AddBarbershop", "Barbershop")'>AddBarbershop</a>
+            <a href='@Url.Action("DeleteBarbershop", "Barbershop")'>DeleteBarbershop</a>
+            <a href='@Url.Action("UpdateBarbershop", "Barbershop")'>UpdateBarbershop</a>
+        </div>
+    }
     <div class="card-deck">
         @foreach (var barbershop in Model)
         {

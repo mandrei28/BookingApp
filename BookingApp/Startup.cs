@@ -13,6 +13,8 @@ using Microsoft.EntityFrameworkCore;
 using BookingApp.DataAccess;
 using BookingApp.ApplicationLogic.Abstractions;
 using BookingApp.ApplicationLogic.Services;
+using Microsoft.AspNetCore.Identity;
+using BookingApp.ApplicationLogic.DataModel;
 
 namespace BookingApp
 {
@@ -31,6 +33,7 @@ namespace BookingApp
             //services.AddLiveReload();
 
             services.AddControllersWithViews();
+            services.AddRazorPages();
             services.AddCors(options =>
             {
                 options.AddPolicy("AllowAllHeaders",
@@ -41,7 +44,9 @@ namespace BookingApp
                                  .AllowAnyMethod();
                       });
             });
-
+            services.AddIdentity<User, IdentityRole>()
+                .AddRoles<IdentityRole>()
+                .AddEntityFrameworkStores<BookingAppDbContext>();
             services.AddDbContext<BookingAppDbContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("connectionString")));
             services.AddScoped<IAdministratorRepository, AdministratorRepository>();
@@ -79,7 +84,7 @@ namespace BookingApp
             app.UseCors(
                 "AllowAllHeaders"
             );
-
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
@@ -87,6 +92,7 @@ namespace BookingApp
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapRazorPages();
             });
 
         }

@@ -158,3 +158,6 @@ body {
 .card-title {
     padding-top: 1rem;
 }
+.nav-link{
+    display: initial;
+}
